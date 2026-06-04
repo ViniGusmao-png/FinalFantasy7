@@ -1,1 +1,9 @@
 @import "tailwindcss";
+
+.pixel-border {
+  image-rendering: pixelated;
+  border: 4px solid #D7D7D7;
+  box-shadow:
+    inset -4px -4px 0px #00000080,
+    inset 4px 4px 0px #ffffff30;
+}
