@@ -3,9 +3,9 @@ import { useRouter } from 'next/navigation'
 export default function Menu() {
     const router = useRouter()
     return(
-        <div className='border-3 border-black rounded-md w-[250] h-[60.6vh]'>
-            <div className="py-5 flex flex-col items-center justify-between border-10 rounded-md border-[#D7D7D7] bg-linear-to-br from-[#0054AC] to-[#010030]  w-[250] h-[60vh] relative">
-                <div className="flex flex-col gap-3">
+        
+            <div className="py-5 flex flex-col items-center justify-between  outline-2 outline-black border-10 rounded-md border-[#D7D7D7] bg-linear-to-br from-[#0054AC] to-[#010030]  w-[250] h-[60vh] relative">
+                <div className="flex flex-col  gap-3">
                     <button className="text-2xl text-white" onClick={() => router.push("/item")}>Item</button>
                     <button className="text-2xl text-white" onClick={() => router.push("/magic")}>Magic</button>
                     <button className="text-2xl text-white" onClick={() => router.push("/materia")}>Materia</button>
@@ -19,6 +19,6 @@ export default function Menu() {
                     <button className="text-2xl text-white">Save</button>
                 </div>
             </div>
-        </div>
+        
     )
 }
