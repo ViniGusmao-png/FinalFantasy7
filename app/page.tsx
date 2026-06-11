@@ -20,7 +20,7 @@ export default async function FF7Menu() {
               nextlevel={character.nextlevel}
               limitelevel={character.limitelevel}
               img={character.img}
-              materias={character.materias}
+              
             />
           ))}
         </div>

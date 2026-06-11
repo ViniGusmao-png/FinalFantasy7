@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+* {
+  cursor: url('/assets/cursor.png') 32 32, auto;
+}
+
 .pixel-border {
   image-rendering: pixelated;
   border: 4px solid #D7D7D7;

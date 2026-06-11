@@ -2,20 +2,22 @@ import Image from "next/image";
 
 
 interface Character{
-    name: string
-    level: number
-    hp: number
-    mp: number
-    nextlevel: number
-    limitelevel: number
+    name?: string
+    level?: number
+    hp?: number
+    mp?: number
+    nextlevel?: number
+    limitelevel?: number
     img: string
-    materias: [string]
+    materias?: [string]
 }
 
 export default function Character({name, level, hp, mp, nextlevel, limitelevel,img}: Character ){
 
-    const nextLevelPercent = (nextlevel / 100) * 100;
-    const limiteLevelPercent = (limitelevel / 100) * 100;
+    
+
+    const nextLevelPercent = (nextlevel ?? 0) / 100 * 100;
+    const limiteLevelPercent = (limitelevel ?? 0) / 100 * 100;
 
 
     return(
