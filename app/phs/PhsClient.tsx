@@ -1,7 +1,7 @@
 'use client';
 
-import Image from "next/image";
-import { useState } from "react";
+import Image from 'next/image';
+import { useState } from 'react';
 
 interface Character {
   name: string;
@@ -17,12 +17,16 @@ interface PhsClientProps {
 }
 
 export default function PhsClient({ team, characters }: PhsClientProps) {
-  const [selectedTeamMember, setSelectedTeamMember] = useState<Character | null>(null);
-  const [selectedCharacter, setSelectedCharacter] = useState<Character | null>(null);
+  const [selectedTeamMember, setSelectedTeamMember] =
+    useState<Character | null>(null);
+  const [selectedCharacter, setSelectedCharacter] = useState<Character | null>(
+    null,
+  );
 
   return (
     <div className="bg-black min-h-screen flex flex-col relative items-center justify-center gap-0.5">
-      <div className="border-5 rounded-md border-[#D7D7D7] bg-linear-to-br from-[#0054AC] to-[#010030] w-[65%] h-[10vh]">
+      <div className="border-5 rounded-md flex items-center border-[#D7D7D7] bg-linear-to-br from-[#0054AC] to-[#010030] w-[65%] h-[10vh]">
+        <h1 className="text-3xl text-white pl-10">PHS</h1>
       </div>
       <div className="flex flex-row w-[65%] gap-0.5">
         <div className="flex flex-col justify-center items-center gap-10 border-5 rounded-md border-[#D7D7D7] bg-linear-to-br from-[#0054AC] to-[#010030] w-[31%] h-[80vh]">
@@ -30,9 +34,14 @@ export default function PhsClient({ team, characters }: PhsClientProps) {
             <div
               key={character.name}
               onClick={() => setSelectedTeamMember(character)}
-              className={`cursor-pointer ${selectedTeamMember?.name === character.name ? 'border-4 border-yellow-400' : ''}`}
             >
-              <Image src={character.img} alt={character.name} width={160} height={150} />
+              <Image
+                src={character.img}
+                alt={character.name}
+                width={160}
+                height={150}
+                className={`cursor-pointer ${selectedTeamMember?.name === character.name ? 'scale-110' : ''}`}
+              />
             </div>
           ))}
         </div>
@@ -41,9 +50,14 @@ export default function PhsClient({ team, characters }: PhsClientProps) {
             <div
               key={character.name}
               onClick={() => setSelectedCharacter(character)}
-              className={`flex justify-center cursor-pointer ${selectedCharacter?.name === character.name ? 'border-4 border-yellow-400' : ''}`}
             >
-              <Image src={character.img} alt={character.name} width={160} height={150} />
+              <Image
+                src={character.img}
+                alt={character.name}
+                width={160}
+                height={150}
+                className={`flex justify-center cursor-pointer ${selectedCharacter?.name === character.name ? 'scale-110' : ''}`}
+              />
             </div>
           ))}
         </div>
